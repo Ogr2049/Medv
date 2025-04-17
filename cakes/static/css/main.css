@@ -16,7 +16,7 @@ body {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    min-height: calc(100% - 60px);
 }
 
 /* NAVIGATION */
@@ -363,4 +363,162 @@ body {
 }
 .corzinaImg{
     fill: #fff;
+}
+/* PROFILE */
+.ptofilePage{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+}
+.profileChar{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 30vw;
+    height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+.avatarWrapper{
+    width: 10vw;
+    height: 10vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.nickname{
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+}
+.profileMail{
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+.profileSpan{
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+.profileFunctions{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: fit-content;
+    gap: 8px;
+    align-items: center;
+    justify-content: center; 
+}
+.profileBtn{
+    text-align: center;
+    text-decoration: none;
+    background-color: #f1a11e;
+    color: #fff;
+    width: 12vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+/* UpdateProfile */
+.updateFormField{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    width: 90%;
+}
+.updateFormField span{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.updateFormField input{
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 2px;
+}
+/* cart */
+
+.cart{
+    display: grid;
+    width: 90%;
+    grid-template-columns: repeat(3, 1fr); 
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px;
+}
+.cartItem{
+    display: flex;
+    flex-direction: column;
+    width: 27vw;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20vw;
+    border: 2px solid #f1a11e;
+    border-radius: 10px;
+}
+.cartItem h1{
+    font-size: 20px;
+}
+.cartImageFunc{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+.cartFunctionals{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.cartFunctionals p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.changeQuantity{
+    display: flex;
+    gap: 0.3vw;
+}
+.quantity{
+    text-decoration: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: deepskyblue;
+    border-color: deepskyblue;
+    font-size: 16px;
+    font-weight: 700;
+    color: aliceblue;
+}
+.minus{
+    text-decoration: none;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+.categoryCart{
+    font-size: 18px;
 }

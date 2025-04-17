@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="profilePage">
+        <div class="profileChar">
+            {% if user.image %}
+            <div 
+                class="avatarWrapper"
+                style="background-image: url('{{ user.image.url }}');"
+            >
+            </div>
+            {% endif %}
+            <h1 class="nickname">{{user.username}}</h1>
+            <span class="profileMail">{{user.email}}</span>
+            <span class="profileSpan">Тип учетной записи {{user.type}}</span>
+            <span class="profileSpan"> имя: {{user.first_name}}</span>
+            <span class="profileSpan"> фамилия: {{user.last_name}}</span>
+            {% if user.adress %}
+                <span class="profileSpan">{{user.adress}}<span>
+            {% endif %}
+        </div>
+        <div class="profileFunctions">
+            <a href="{% url 'cakes:profile_update' %}" class="profileBtn">Изменить профиль</a>
+            <a href="/" class="profileBtn">Указать адрес</a>
+            <a href="/" class="profileBtn">Фотоальбом</a>
+            <a href="/" class="profileBtn">Написать в поддержку</a>
+            <a href="{% url 'cakes:reminders' %}" class="profileBtn">Напоминания</a>
+        </div>
+    </div>
+{% endblock %}

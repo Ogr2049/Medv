@@ -66,9 +66,14 @@
                             Цена: {{ product.price }} / {{ product.amount }}
                         </span>
                     </div>
-                    <button class="corzina">
-                        <img class="corzinaImg" src="{% static 'images/telega.svg'%}" />
-                    </button>
+                    <!-- CODE FOR CART -->
+                    <form method="POST" action="{% url 'cakes:cart_add' %}?id={{ product.id }}">
+                        {% csrf_token %}
+                        <button class="corzina" type="submit">
+                            <img class="corzinaImg" src="{% static 'images/telega.svg'%}" />
+                        </button>
+                    </form>
+                    <!-- -->
                 </div>
             {% endfor %}
         </div>

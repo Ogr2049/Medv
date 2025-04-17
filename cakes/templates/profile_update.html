@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="FormPage">
+    <div class="signInUpTitle">Обновите данные</div>
+            <form class="signInUpForm" method="POST">
+                {% csrf_token %}
+                <div class="signInUpFields">
+                {% for field in form %}
+                    <div class="updateFormField">
+                        <span>{{ field.label }}</span> 
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <div class="ifRdy">
+                     <div class="signInUpButtons">
+                        <button type="submit" class="enter">
+                            Обновить данные
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

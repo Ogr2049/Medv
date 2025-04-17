@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="cart">
+
+    {% for note in cart %}
+        <div class="cartItem">
+            <h1>
+                {{ note.product.name }}
+            </h1>
+            <p class="categoryCart">
+                {{ note.product.category }}
+            </p>
+            <div class="cartImageFunc">
+                <img src="{{ note.product.image }}" />
+                <div class="cartFunctionals">
+                    <p>
+                        Количество: {{ note.quantity }}
+                    </p>
+                    <div class="changeQuantity">
+                        <form method="POST" action="{% url 'cakes:cart_decrease' %}?id={{ note.product.id }}">
+                            {% csrf_token %}
+                                <button class="minus" type="submit">
+                                    -1
+                                </button>
+                        </form>
+                        <form method="POST" action="{% url 'cakes:cart_add' %}?id={{ note.product.id }}">
+                            {% csrf_token %}
+                            <button class="quantity" type="submit">
+                                +1
+                            </button>
+                        </form>
+                    </div>
+                    <form method="POST" action="{% url 'cakes:cart_remove' %}?id={{ note.product.id }}">
+                        {% csrf_token %}
+                            <button class="enter" type="submit">
+                                Убрать из корзины
+                            </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+ 
+</div>
+{% endblock %}

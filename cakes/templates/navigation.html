@@ -24,8 +24,8 @@
             <img src="{% static 'images/dropdownArrow.svg'%}" />
             <div id="dropdownMenu" class="dropdownContent" style="display: none;">
                 {% if request.user.is_authenticated %}
-                    <a href="/catalog/">Мой профиль</a>
-                    <a href="/catalog/">Корзина</a>
+                    <a href="/profile/">Мой профиль</a>
+                    <a href="{% url 'cakes:cart' %}">Корзина</a>
                     <a href="/catalog/">Конструктор тортов</a>
                     <a href="/catalog/">Отчёты</a>
                     <a href="{% url 'cakes:logout' %}">Выход</a>
