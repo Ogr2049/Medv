@@ -229,4 +229,138 @@ body {
     border-radius: 10px;
     color: rgba(0, 0, 0, 0.7);
 }
-
+/* CATALOG */
+.catalogPage{
+    display: flex;
+    gap: 20px;
+    min-width: 100%;
+    min-height: 100%;
+    justify-content: center;
+    margin-top: 30px;
+}
+.catSide{
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    align-items: center;
+    gap: 3px;
+}
+.goods{
+    background-color: #f1a11e;
+    color: rgb(70, 30, 11);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 1px solid #f1a11e;
+}
+.oneCat{
+    display: flex;
+    color: rgb(70, 30, 11);
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+    padding-left: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #f1a11e;
+}
+.catTitle{
+    width: 85%;
+    color: rgb(72, 31, 11);
+    font-weight: 700;
+    font-size: 16px;
+}
+.countCat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    background-color: orangered;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: 13%;
+    border-radius: 50%;
+}
+.arrowCat{
+    color: #fff;
+}
+.catalogSide{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+}
+.catalogParams{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sortBtn{
+    display:flex;
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+}
+.sortBtn span{
+    width: 10vw;
+}
+.catalog{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+}
+.catalogCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    gap: 15px;
+    height: 330px;
+}
+.catalog h1{
+    font-size: 12px;
+    width: 90%;
+    text-align: justify;
+    height: 20%;
+}
+.infoCatalog{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    border: none;
+}
+.category{
+    font-size: 16px;
+}
+.price{
+    font-weight: 700;
+    font-size: 20px;
+}
+.corzina{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 20%;
+    border-color: #f1a11e;
+    text-decoration: none;
+    background-color: #fff;
+}
+.corzinaImg{
+    fill: #fff;
+}

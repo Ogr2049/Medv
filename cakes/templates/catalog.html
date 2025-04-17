@@ -3,22 +3,76 @@
 {% load static %}
 
 {% block content %}
-
-<div>
-    {% for product in products %}
-        <div>
-            <h1>
-                {{ product.name }}
-            </h1>
-            <p>
-                Категория: {{ product.category }}
-            </p>
-            <p>
-                Цена: {{ product.price }} / {{ product.amount }}
-            </p>
-            <img src="{{ product.image }}" />
+<div class="catalogPage">
+    <div class="catSide">
+        <div class="goods">Все товары</div>
+        <div class="oneCat">
+            <span class="catTitle">Конфеты</span>
+            <div class="countCat">
+                <span>1</span>
+                <img class="arrowCat" src="{% static 'images/arrowWhite.svg'%}"/>
+            </div>
         </div>
-    {% endfor %}
+        <div class="oneCat">
+            <span class="catTitle">Сливочные</span>
+            <div class="countCat">
+                <span>1</span>
+                <img class="arrowCat" src="{% static 'images/arrowWhite.svg'%}"/>
+            </div>
+        </div>
+        <div class="oneCat">
+            <span class="catTitle">Халва</span>
+            <div class="countCat">
+                <span>1</span>
+                <img class="arrowCat" src="{% static 'images/arrowWhite.svg'%}"/>
+            </div>
+        </div>
+        <div class="oneCat">
+            <span class="catTitle">Драже</span>
+            <div class="countCat">
+                <span>1</span>
+                <img class="arrowCat" src="{% static 'images/arrowWhite.svg'%}"/>
+            </div>
+        </div>
+        <div class="oneCat">
+            <span class="catTitle">Батончик</span>
+            <div class="countCat">
+                <span>1</span>
+                <img class="arrowCat" src="{% static 'images/arrowWhite.svg'%}"/>
+            </div>
+        </div>
+    </div>
+    <div class="catalogSide">
+        <div class="catalogParams"> 
+            <h1> Наши продукты </h1>
+            <div class="sortBtn">
+                <img src="{% static 'images/chart.svg' %}" />
+                <span>По пулярности</span>
+                <img src="{% static 'images/arrowTop.svg' %}"/>
+            </div>
+        </div>
+        <div class="catalog">
+            {% for product in products %}
+                <div class="catalogCard">
+                    <img src="{{ product.image }}" />
+                    <h1>
+                        {{ product.name }}
+                    </h1>
+                    <div class="infoCatalog">
+                        <span class="category">
+                            Категория: {{ product.category }}
+                        </span>
+                        <span class="price">
+                            Цена: {{ product.price }} / {{ product.amount }}
+                        </span>
+                    </div>
+                    <button class="corzina">
+                        <img class="corzinaImg" src="{% static 'images/telega.svg'%}" />
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 
 {% endblock content %}
