@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div>
+    {% for product in products %}
+        <div>
+            <h1>
+                {{ product.name }}
+            </h1>
+            <p>
+                Категория: {{ product.category }}
+            </p>
+            <p>
+                Цена: {{ product.price }} / {{ product.amount }}
+            </p>
+            <img src="{{ product.image }}" />
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

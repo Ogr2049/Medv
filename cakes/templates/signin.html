@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="formPage">
+    <div class="signInUpTitle">Войдите в свой аккаунт</div>
+    <form class="signInUpForm" method="POST">
+        {% csrf_token %}
+        <div class="signInUpFields">
+        {% for field in form %}
+            <div class="formField">
+                <span>{{ field.label_tag }}</span> 
+                {{ field }}
+            </div>
+        {% endfor %}
+        </div>
+        <div class="ifRdy">
+            <div class="signInUpButtons">
+                <button class="enter">
+                    Войти
+                </button>
+                <button class="goToSignUpIn" method="GET" type="button" onclick="location.href='{% url 'cakes:signup' %}'">
+                    Нет аккаунта?
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+<p>
+    {{error}}
+</p>
+{% endblock content %}

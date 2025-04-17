@@ -1,0 +1,40 @@
+{% load static %}
+<script src="{% static 'js/dropDown.js' %}"></script>
+{% block navigation %}
+<div class="navigation">
+    <div class="navigationWrapper">
+        <div class="navigationWrapperLogo">
+            <h1>
+                FIT & FOOD
+            </h1>
+        </div>
+        <div class="navigationWrapperLinks">
+            <ul class="navUl">
+                <li>
+                    <a href="{% url 'cakes:signin' %}"> Старт </a>
+                </li>
+                <li>
+                    <a href="/catalog/"> Каталог </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navigationWrapperProfile">
+            <img src="{% static 'images/user.svg'%}" />
+            <span>ПРОФИЛЬ</span>
+            <img src="{% static 'images/dropdownArrow.svg'%}" />
+            <div id="dropdownMenu" class="dropdownContent" style="display: none;">
+                {% if request.user.is_authenticated %}
+                    <a href="/catalog/">Мой профиль</a>
+                    <a href="/catalog/">Корзина</a>
+                    <a href="/catalog/">Конструктор тортов</a>
+                    <a href="/catalog/">Отчёты</a>
+                    <a href="{% url 'cakes:logout' %}">Выход</a>
+                {% else %}
+                    <a href="{% url 'cakes:signin' %}">Вход</a>
+                    <a href="{% url 'cakes:signup' %}">Регистрация</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock navigation %}
